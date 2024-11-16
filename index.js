@@ -53,7 +53,15 @@ server.delete("/videos/:id", (request, reply) => {
   return reply.status(204).send();
 });
 
-server.listen(3000, '0.0.0.0', () => {
-    console.log('Servidor escutando em todas as interfaces na porta 3000');
+
+server.listen({
+  port: 3000,
+  host: '0.0.0.0'
+}, (err, address) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  console.log(`Servidor escutando em ${address}`);
 });
 
