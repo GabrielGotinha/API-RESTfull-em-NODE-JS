@@ -53,6 +53,7 @@ server.delete("/videos/:id", (request, reply) => {
   return reply.status(204).send();
 });
 
-server.listen({
-  port: '0.0.0.0' ?? 3000,
+server.listen(3000, '0.0.0.0', () => {
+    console.log('Servidor escutando em todas as interfaces na porta 3000');
 });
+
