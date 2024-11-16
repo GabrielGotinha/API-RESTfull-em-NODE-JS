@@ -54,5 +54,5 @@ server.delete("/videos/:id", (request, reply) => {
 });
 
 server.listen({
-  port: process.env.DATABASE_URL ?? 3000,
+  port: process.env.PORT ?? 3000,
 });
